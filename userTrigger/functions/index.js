@@ -38,7 +38,7 @@ function handleEvent(event) {
         message: message,
       });
     } catch (error) {
-      console.log('更新エラー');
+      console.log('DB更新エラー');
       console.log(error);
     }
     message = 'update db';
