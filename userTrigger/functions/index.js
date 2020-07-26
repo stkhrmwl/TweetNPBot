@@ -30,7 +30,9 @@ function handleEvent(event) {
   // ******************** Firestore
   userId = event.source.userId;
 
-  if (message.match(/テスト/)) {
+  if (message.length < 4) {
+    message = '検索キーワードは4文字以上で入力してください';
+  } else if (message.match(/テスト/)) {
     userId = event.source.userId;
     try {
       db.collection('users').doc(userId).set({
@@ -38,10 +40,10 @@ function handleEvent(event) {
         message: message,
       });
     } catch (error) {
-      console.log('DB更新エラー');
+      console.log('トークン更新エラー');
       console.log(error);
     }
-    message = 'update db';
+    message = '分析中...';
   }
   // ********************
 
