@@ -16,7 +16,11 @@
     "@line/bot-sdk": "^7.0.0",
     "firebase-admin": "^8.10.0",
     "firebase-functions": "^3.6.1",
-    "python-shell": "^2.0.1"
+    "kuromojin": "^2.0.0",
+    "mecab-async": "^0.1.2",
+    "negaposi-analyzer-ja": "^1.0.1",
+    "python-shell": "^2.0.1",
+    "twitter": "^1.7.1"
   },
   "devDependencies": {
     "eslint": "^5.12.0",
