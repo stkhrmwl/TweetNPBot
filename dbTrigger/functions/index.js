@@ -1,6 +1,7 @@
 'use strict';
 
 const functions = require('firebase-functions');
+const { PythonShell } = require('python-shell');
 
 const line = require('@line/bot-sdk');
 const ENV = require('./env.json');
@@ -20,18 +21,24 @@ const config = {
 };
 const client = new line.Client(config);
 
+const pyshell = new PythonShell('calc.py');
+
 exports.sendParams = functions
   .region('asia-northeast1')
   .firestore.document('users/{userId}')
   .onWrite((change, context) => {
     const userId = context.params.userId;
 
-    getDoc(userId).then((result) => {
-      let pushContent = result.message;
+    getAnalyzed(userId).then((result) => {
+      let pushContent = 'test';
+
+      pushContent = result;
+
       const message = {
         type: 'text',
         text: pushContent,
       };
+
       client
         .pushMessage(userId, message)
         .then(() => {
@@ -45,13 +52,19 @@ exports.sendParams = functions
     return 0;
   });
 
-const getDoc = (userId) => {
+const getAnalyzed = (userId) => {
   return new Promise((resolve) => {
+    console.log('reach getDoc');
     db.collection('users')
       .doc(userId)
       .get()
       .then((doc) => {
-        resolve(doc.data());
+        console.log('staet analyze');
+        const rawData = doc.data();
+        pyshell.send(rawData.message);
+        pyshell.on('message', (message) => {
+          resolve(message);
+        });
       })
       .catch((err) => {
         console.log(err);
