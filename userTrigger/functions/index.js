@@ -32,7 +32,7 @@ function handleEvent(event) {
 
   if (message.length < 4) {
     message = '検索キーワードは4文字以上で入力してください';
-  } else if (message.match(/テスト/)) {
+  } else if (message.match(/乃木坂工事中/)) {
     userId = event.source.userId;
     try {
       db.collection('users').doc(userId).set({
