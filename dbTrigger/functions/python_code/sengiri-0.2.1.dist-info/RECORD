@@ -1,0 +1,10 @@
+sengiri-0.2.1.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+sengiri-0.2.1.dist-info/LICENSE,sha256=suLP6mi17pfecICT1dGLjL17lo2gYDLbMVJk_z8Xs24,1081
+sengiri-0.2.1.dist-info/METADATA,sha256=6roCwkpwfBM8zexNkvR9feIiZgG_BL_oJvJxaZBpvVQ,3615
+sengiri-0.2.1.dist-info/RECORD,,
+sengiri-0.2.1.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+sengiri-0.2.1.dist-info/top_level.txt,sha256=myTwbcMVSt1uCNB9eoucvfDbSfF40QQN4bN_-an9JAQ,8
+sengiri/__init__.py,sha256=V5zXMMk_2tlO7gJzdAKaj4iOfX2aAyyJaW-XTjMVhgw,250
+sengiri/__pycache__/__init__.cpython-38.pyc,,
+sengiri/__pycache__/sengiri.cpython-38.pyc,,
+sengiri/sengiri.py,sha256=l3IPuY-fKlLLsOsv3CrwTsaHX_fgaVnlwB8yhBChiO8,1868
