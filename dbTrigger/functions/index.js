@@ -29,10 +29,10 @@ exports.sendParams = functions
   .onWrite((change, context) => {
     const userId = context.params.userId;
 
-    getDocument(userId).then((doc) => {
+    getDocument(userId).then((result) => {
       // let pushContent = doc.message;
 
-      getAnalyzed(doc.message).then((result) => {
+      getAnalyzed(result.message).then((result) => {
         const message = {
           type: 'text',
           text: result,
